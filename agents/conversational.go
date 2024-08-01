@@ -121,10 +121,9 @@ func constructScratchPad(steps []schema.AgentStep) string {
 	var scratchPad string
 	if len(steps) > 0 {
 		for _, step := range steps {
-			scratchPad += step.Action.Log
+			scratchPad += "\n" + step.Action.Log
 			scratchPad += "\nObservation: " + step.Observation
 		}
-		scratchPad += "\n" + "Thought:"
 	}
 
 	return scratchPad
